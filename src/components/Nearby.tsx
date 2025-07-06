@@ -56,8 +56,8 @@ const Nearby: React.FC = () => {
             
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <div className="animate-pulse">
-                <div className="w-6 h-6 bg-red-600 rounded-full shadow-xl" />
-                <div className="w-6 h-6 bg-red-600 rounded-full absolute top-0 left-0 opacity-40 animate-ping" />
+                <div className="w-6 h-6 text-[#b60b49] rounded-full shadow-xl" />
+                <div className="w-6 h-6 text-[#b60b49] rounded-full absolute top-0 left-0 opacity-40 animate-ping" />
               </div>
             </div>
           </div>
