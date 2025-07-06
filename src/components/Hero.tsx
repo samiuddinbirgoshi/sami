@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { X, Menu } from "lucide-react";
 
 export default function Hero() {
-  const [hasMounted, setHasMounted] = useState(false); // hydration-safe guard
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,7 +17,7 @@ export default function Hero() {
   const slides = [
     {
       image: "/a.jpg",
-      title: "Joinville Suites",
+      title: "Joinville Suites", // Proper space between words
       subtitle: "Waterfront Living in Windsor",
     },
   ];
@@ -32,10 +31,6 @@ export default function Hero() {
   ];
 
   useEffect(() => {
-    setHasMounted(true); // mark client-side mount
-  }, []);
-
-  useEffect(() => {
     setIsVisible(true);
     mobileMenuOpenRef.current = mobileMenuOpen;
 
@@ -45,12 +40,15 @@ export default function Hero() {
 
     const handleScroll = () => {
       if (mobileMenuOpenRef.current) return;
-
+      
       const currentScrollY = window.scrollY;
-
+      
+      // Show header only when scrolling up
       if (currentScrollY < lastScrollY.current && currentScrollY > 10) {
         setShowHeader(true);
-      } else if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
+      } 
+      // Hide header when scrolling down
+      else if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
         setShowHeader(false);
       }
 
@@ -59,18 +57,16 @@ export default function Hero() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
+    
     return () => {
       clearInterval(interval);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [mobileMenuOpen, slides.length]);
+  }, [slides.length]);
 
   useEffect(() => {
     mobileMenuOpenRef.current = mobileMenuOpen;
   }, [mobileMenuOpen]);
-
-  if (!hasMounted) return null; // avoid SSR/client mismatch
 
   return (
     <section id="home" className="relative h-screen w-full overflow-hidden">
@@ -95,31 +91,29 @@ export default function Hero() {
       </div>
 
       {/* Sticky Header */}
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 transform ${
-          showHeader ? "translate-y-0" : "-translate-y-full"
-        } ${
-          isScrolled
-            ? "md:bg-black bg-black shadow-lg py-5"
-            : "bg-transparent pt-4 pb-2"
-        }`}
-      >
+  // In the header element
+<header
+  className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 transform ${
+    showHeader ? "translate-y-0" : "-translate-y-full"
+  } ${
+    isScrolled 
+      ? "md:bg-black bg-black shadow-lg py-5" 
+      : "bg-transparent pt-4 pb-2" // Added top padding here
+  }`}
+>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
-            <Link href="/">
-              <span
-                className={`${
-                  isScrolled
-                    ? "text-xl font-medium md:text-xl"
-                    : "text-xl md:text-xl"
-                } tracking-tight text-white`}
-              >
-                JOINVILLE <span className="font-medium">SUITES</span>
-              </span>
-            </Link>
+            {/* Clean logo without bold */}
+         <Link href="/">
+  <span className={`${isScrolled ? "text-xl font-medium  md:text-xl" : "text-xl md:text-xl"} tracking-tight text-white`}>
+    JOINVILLE <span className="font-medium">SUITES</span>
+  </span>
+</Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8 text-white">
+            <nav
+              className={`hidden md:flex items-center space-x-8 transition-all text-white`}
+            >
               {navItems.map((item) => (
                 <Link key={item.name} href={item.href}>
                   <span className="relative font-medium text-[15.5px] group cursor-pointer">
@@ -133,7 +127,7 @@ export default function Hero() {
             {/* Mobile Menu Button */}
             <div className="flex items-center">
               <button
-                className="text-white md:hidden"
+                className="text-white transition-all duration-300 md:hidden"
                 onClick={() => setMobileMenuOpen(true)}
               >
                 <Menu className="h-7 w-7" />
@@ -160,7 +154,7 @@ export default function Hero() {
                 JOINVILLE SUITES
               </span>
               <button
-                className="text-white hover:text-gray-300"
+                className="text-white hover:text-gray-300 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <X className="h-7 w-7" />
@@ -169,11 +163,11 @@ export default function Hero() {
 
             <nav className="flex flex-col space-y-4 flex-grow">
               {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
+                <Link 
+                  key={item.name} 
+                  href={item.href} 
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-lg text-white hover:text-gray-300 py-2"
+                  className="text-lg text-white hover:text-gray-300 transition-colors py-2"
                 >
                   {item.name}
                 </Link>
@@ -183,7 +177,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Hero Content */}
+      {/* Hero Content - FIXED TITLE SPACING */}
       <div className="absolute inset-0 z-10 flex flex-col justify-center items-start px-6 md:px-12 lg:px-24 pt-16">
         <div
           className={`transform transition-all duration-1000 delay-500 ${
@@ -191,6 +185,7 @@ export default function Hero() {
           }`}
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-light text-white mb-4 leading-tight tracking-tight">
+            {/* Fixed spacing by rendering the whole title as one animated element */}
             <span
               className={`inline-block transform transition-all duration-700 delay-200 ease-out ${
                 isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
