@@ -62,7 +62,7 @@ export default function Hero() {
       clearInterval(interval);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [slides.length]);
+  }, [slides.length, mobileMenuOpen]); // Added mobileMenuOpen to dependencies
 
   useEffect(() => {
     mobileMenuOpenRef.current = mobileMenuOpen;
@@ -91,24 +91,23 @@ export default function Hero() {
       </div>
 
       {/* Sticky Header */}
-  // In the header element
-<header
-  className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 transform ${
-    showHeader ? "translate-y-0" : "-translate-y-full"
-  } ${
-    isScrolled 
-      ? "md:bg-black bg-black shadow-lg py-5" 
-      : "bg-transparent pt-4 pb-2" // Added top padding here
-  }`}
->
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 transform ${
+          showHeader ? "translate-y-0" : "-translate-y-full"
+        } ${
+          isScrolled 
+            ? "md:bg-black bg-black shadow-lg py-5" 
+            : "bg-transparent pt-4 pb-2" // Added top padding here
+        }`}
+      >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             {/* Clean logo without bold */}
-         <Link href="/">
-  <span className={`${isScrolled ? "text-xl font-medium  md:text-xl" : "text-xl md:text-xl"} tracking-tight text-white`}>
-    JOINVILLE <span className="font-medium">SUITES</span>
-  </span>
-</Link>
+            <Link href="/">
+              <span className={`${isScrolled ? "text-xl font-medium  md:text-xl" : "text-xl md:text-xl"} tracking-tight text-white`}>
+                JOINVILLE <span className="font-medium">SUITES</span>
+              </span>
+            </Link>
 
             {/* Desktop Navigation */}
             <nav
