@@ -7,8 +7,7 @@ import { X, Menu } from "lucide-react";
 import Amenities from "@/components/Amenities";
 import Interior from "@/components/Interior";
 import Footer from "@/components/Footer";
-import FloorPlans from "@/components/FloorPlans";
-import FloorPlansPage from "@/components/FloorPlansPage";
+import ImageGallery from "@/components/ImageGallery";
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -21,8 +20,8 @@ export default function Hero() {
 
   const slides = [
     {
-      image: "/e.jpg",
-      title: "Floor Plans & Price", // Proper space between words
+      image: "/c.jpg",
+      title: " Gallery", // Proper space between words
       // subtitle: "Waterfront Living in Windsor",
     },
   ];
@@ -35,44 +34,37 @@ export default function Hero() {
     { name: "Contact", href: "/contact" },
   ];
 
-  useEffect(() => {
-    setIsVisible(true);
-    mobileMenuOpenRef.current = mobileMenuOpen;
+useEffect(() => {
+  setIsVisible(true);
+  mobileMenuOpenRef.current = mobileMenuOpen;
 
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
+  const interval = setInterval(() => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  }, 5000);
 
-    const handleScroll = () => {
-      if (mobileMenuOpenRef.current) return;
-      
-      const currentScrollY = window.scrollY;
-      
-      // Show header only when scrolling up
-      if (currentScrollY < lastScrollY.current && currentScrollY > 10) {
-        setShowHeader(true);
-      } 
-      // Hide header when scrolling down
-      else if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
-        setShowHeader(false);
-      }
-
-      lastScrollY.current = currentScrollY;
-      setIsScrolled(currentScrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
+  const handleScroll = () => {
+    if (mobileMenuOpenRef.current) return;
     
-    return () => {
-      clearInterval(interval);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [slides.length]);
+    const currentScrollY = window.scrollY;
+    
+    if (currentScrollY < lastScrollY.current && currentScrollY > 10) {
+      setShowHeader(true);
+    } 
+    else if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
+      setShowHeader(false);
+    }
 
-  useEffect(() => {
-    mobileMenuOpenRef.current = mobileMenuOpen;
-  }, [mobileMenuOpen]);
+    lastScrollY.current = currentScrollY;
+    setIsScrolled(currentScrollY > 10);
+  };
 
+  window.addEventListener("scroll", handleScroll);
+  
+  return () => {
+    clearInterval(interval);
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, [slides.length, mobileMenuOpen]); // Add mobileMenuOpen here
   return (
     <>
     <section id="home" className="relative h-screen w-full overflow-hidden">
@@ -95,6 +87,7 @@ export default function Hero() {
           </div>
         ))}
       </div>
+
 
 <header
   className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 transform ${
@@ -203,7 +196,7 @@ export default function Hero() {
               isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
             }`}
           >
-         
+            {/* {slides[currentSlide].subtitle} */}
           </p>
         </div>
       </div>
@@ -222,13 +215,17 @@ export default function Hero() {
         ))}
       </div>
     </section>
-  {/* <FloorPlans/> */}
-    <FloorPlansPage/>
-     
+     <ImageGallery/>
+         {/* <CityWalkVision/>  */}
+       {/* <FloorPlans/>  */}
+       {/* <Interior/>  */}
+       {/* <LocationSection />  */}
+       {/* <Masterplan/>  */}
+       {/* <OtherProjects/>  */}
+       {/* <MasterDevelopments/>  */}
      <Footer/>
   </>
   );
 }
    
     
-

@@ -26,7 +26,7 @@ export default function Hero() {
     { name: "Home", href: "/" },
     { name: "Amenities", href: "/amenties" },
     { name: "Floor Plans & Price", href: "/floorplans" },
-    { name: "Gallery", href: "/#gallery" },
+    { name: "Gallery", href: "/gallery" },
     { name: "Contact", href: "/contact" },
   ];
 
