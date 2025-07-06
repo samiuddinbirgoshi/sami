@@ -13,7 +13,7 @@ export default function ImprovementsSection() {
         <div className="text-center mb-20 max-w-3xl mx-auto">
           <div className="inline-flex items-center justify-center mb-6">
             <div className="w-16 h-0.5 bg-red-400"></div>
-            <div className="mx-4 text-red-400 font-light uppercase tracking-widest text-sm">Premium Living</div>
+            <div className="mx-4 text-red-700 font-light uppercase tracking-widest text-sm">Premium Living</div>
             <div className="w-16 h-0.5 bg-red-300"></div>
           </div>
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
@@ -37,7 +37,7 @@ export default function ImprovementsSection() {
               <ul className="space-y-6">
                 <li className="flex items-start">
                   <div className="bg-red-50 rounded-full p-2 mr-4">
-                    <svg className="h-5 w-5 text-red-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="h-5 w-5 text-red-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                   </div>
@@ -48,7 +48,7 @@ export default function ImprovementsSection() {
                 </li>
                 <li className="flex items-start">
                   <div className="bg-red-50 rounded-full p-2 mr-4">
-                    <svg className="h-5 w-5 text-red-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="h-5 w-5 text-red-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                   </div>
@@ -59,7 +59,7 @@ export default function ImprovementsSection() {
                 </li>
                 <li className="flex items-start">
                   <div className="bg-red-50 rounded-full p-2 mr-4">
-                    <svg className="h-5 w-5 text-red-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="h-5 w-5 text-red-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                   </div>
@@ -70,7 +70,7 @@ export default function ImprovementsSection() {
                 </li>
                 <li className="flex items-start">
                   <div className="bg-red-50 rounded-full p-2 mr-4">
-                    <svg className="h-5 w-5 text-red-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="h-5 w-5 text-red-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                   </div>
@@ -81,7 +81,7 @@ export default function ImprovementsSection() {
                 </li>
                 <li className="flex items-start">
                   <div className="bg-red-50 rounded-full p-2 mr-4">
-                    <svg className="h-5 w-5 text-red-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="h-5 w-5 text-red-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                   </div>
@@ -108,7 +108,7 @@ export default function ImprovementsSection() {
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="bg-red-50 rounded-full p-2 mr-4">
-                    <svg className="h-5 w-5 text-red-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="h-5 w-5 text-red-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                     </svg>
@@ -120,7 +120,7 @@ export default function ImprovementsSection() {
                 </div>
                 <div className="flex items-start">
                   <div className="bg-red-50 rounded-full p-2 mr-4">
-                    <svg className="h-5 w-5 text-red-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="h-5 w-5 text-red-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                     </svg>
@@ -132,7 +132,7 @@ export default function ImprovementsSection() {
                 </div>
                 <div className="flex items-start">
                   <div className="bg-red-50 rounded-full p-2 mr-4">
-                    <svg className="h-5 w-5 text-red-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="h-5 w-5 text-red-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                     </svg>
@@ -144,7 +144,7 @@ export default function ImprovementsSection() {
                 </div>
                 <div className="flex items-start">
                   <div className="bg-red-50 rounded-full p-2 mr-4">
-                    <svg className="h-5 w-5 text-red-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="h-5 w-5 text-red-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                     </svg>
@@ -156,7 +156,7 @@ export default function ImprovementsSection() {
                 </div>
                 <div className="flex items-start">
                   <div className="bg-red-50 rounded-full p-2 mr-4">
-                    <svg className="h-5 w-5 text-red-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="h-5 w-5 text-red-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                     </svg>

@@ -97,7 +97,7 @@ export default function Interior() {
             {isPlaying ? (
               <div className="w-full h-full flex items-center justify-center">
                 <iframe 
-                  src={bedroomViews[selectedBedroom].video}
+                  // src={bedroomViews[selectedBedroom].video}
                   className="w-full h-full"
                   frameBorder="0"
                   allow="accelerometer; autoplay; fullscreen; gyroscope; vr"
@@ -107,7 +107,7 @@ export default function Interior() {
             ) : (
               <>
                 <img
-                  src={bedroomViews[selectedBedroom].image}
+                  // src={bedroomViews[selectedBedroom].image}
                   alt={`${selectedBedroom} Interior View`}
                   className="w-full h-full object-cover"
                 />

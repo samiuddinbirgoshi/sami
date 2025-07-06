@@ -56,7 +56,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-medium mb-4">Contact Us</h3>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li>Phone: (123) 456-7890</li>
+              {/* <li>Phone: (123) 456-7890</li> */}
               <li>Email: info@joinvillesuites.com</li>
               <li>Leasing Office Hours:</li>
               <li>Mon-Fri: 9am-5pm</li>

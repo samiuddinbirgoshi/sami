@@ -67,7 +67,7 @@ const Nearby: React.FC = () => {
               {proximityStats.map((stat, index) => (
                 <div key={`stat-${index}`} className="p-2 md:p-4">
               <div 
-  className="text-4xl md:text-5xl lg:text-6xl font-light mb-2 text-center md:text-left text-red-400"
+  className="text-4xl md:text-5xl lg:text-6xl font-light mb-2 text-center md:text-left text-red-600"
 >
   {stat.number}
 </div>

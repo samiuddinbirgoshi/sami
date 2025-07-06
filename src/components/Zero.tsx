@@ -235,7 +235,7 @@ export default function Zero() {
               isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
             }`}
           >
-            {slides[currentSlide].subtitle}
+            {/* {slides[currentSlide].subtitle} */}
           </p>
         </div>
       </div>

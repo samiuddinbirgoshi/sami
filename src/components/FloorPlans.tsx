@@ -87,7 +87,7 @@ export default function FloorPlans() {
           <div className="relative">
             <div className="bg-gray-50 rounded-sm p-2 min-h-96 flex flex-col items-center justify-center">
               <img
-                src={activeView === "2D" ? currentUnit.image2D : currentUnit.image3D}
+                src={activeView === "2D" ? currentUnit.image2D : currentUnit.image2D}
                 alt={`${activeUnit} Floor Plan`}
                 className="w-full h-auto max-w-8xl mx-auto"
               />
