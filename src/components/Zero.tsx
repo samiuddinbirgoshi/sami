@@ -31,9 +31,10 @@ export default function Zero() {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Amenities", href: "/amenties" },
-  { name: "Floor Plans", href: "/floorplans" },
+  { name: "“Floor Plans & Pricing", href: "/floorplans" },
     { name: "Gallery", href: "/gallery" },
-    { name: "Contact", href: "/#contact" },
+    { name: "Contact", href: "/contact" },
+     { name: "Maintainace Requests", href: "/Maintanace"},
   ];
 
   const socialIcons = [

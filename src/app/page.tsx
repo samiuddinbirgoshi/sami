@@ -31,7 +31,7 @@ export default function Home() {
       <UrbanLife />
       <Nearby />
       <ContactForm />
-      <FloorPlansPage />
+      {/* <FloorPlansPage /> */}
       <Footer />
     </main>
   );

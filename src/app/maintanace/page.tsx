@@ -4,9 +4,9 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { X, Menu } from "lucide-react";
-import Amenities from "@/components/Amenities";
-import Interior from "@/components/Interior";
+
 import Footer from "@/components/Footer";
+import ContactForm from "@/components/ContactForm";
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -19,8 +19,8 @@ export default function Hero() {
 
   const slides = [
     {
-      image: "/d.jpg",
-      title: " Amenities", // Proper space between words
+      image: "/b.jpg",
+      title: "Maintanance Request", // Proper space between words
       // subtitle: "Waterfront Living in Windsor",
     },
   ];
@@ -28,12 +28,11 @@ export default function Hero() {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Amenities", href: "/amenties" },
-    { name: "Floor Plans & Price", href: "/floorplans" },
+    { name: "“Floor Plans & Pricing", href: "/floorplans" },
     { name: "Gallery", href: "/gallery" },
     { name: "Contact", href: "/contact" },
-    { name: "Maintainace Requests", href: "/maintanace"},
+       { name: "Maintainace Requests", href: "/maintanace"},
   ];
-
 useEffect(() => {
   setIsVisible(true);
   mobileMenuOpenRef.current = mobileMenuOpen;
@@ -65,6 +64,7 @@ useEffect(() => {
     window.removeEventListener("scroll", handleScroll);
   };
 }, [slides.length, mobileMenuOpen]); // Add mobileMenuOpen here
+
   return (
     <>
     <section id="home" className="relative h-screen w-full overflow-hidden">
@@ -88,7 +88,7 @@ useEffect(() => {
         ))}
       </div>
 
-
+  
 <header
   className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 transform ${
     showHeader ? "translate-y-0" : "-translate-y-full"
@@ -215,7 +215,7 @@ useEffect(() => {
         ))}
       </div>
     </section>
-     <Amenities/>
+     <ContactForm/>
          {/* <CityWalkVision/>  */}
        {/* <FloorPlans/>  */}
        {/* <Interior/>  */}

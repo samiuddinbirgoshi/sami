@@ -44,11 +44,11 @@ export default function Footer() {
             <h3 className="text-lg font-medium mb-4">Our Locations</h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>3905 Riverside Drive East</li>
-              <li>Windsor, ON</li>
-              <li>72 Units</li>
+              {/* <li>Windsor, ON</li> */}
+              {/* <li>72 Units</li> */}
               <li className="mt-4">3900 Wyandotte Street East</li>
               <li>Windsor, ON</li>
-              <li>54 Units</li>
+              {/* <li>54 Units</li> */}
             </ul>
           </div>
 
@@ -58,10 +58,10 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-gray-400">
               {/* <li>Phone: (123) 456-7890</li> */}
               <li>Email: info@joinvillesuites.com</li>
-              <li>Leasing Office Hours:</li>
-              <li>Mon-Fri: 9am-5pm</li>
-              <li>Sat: 10am-4pm</li>
-              <li>Sun: Closed</li>
+              {/* <li>Leasing Office Hours:</li>
+              <li>Mon-Fri: 9am-5pm</li> */}
+              {/* <li>Sat: 10am-4pm</li> */}
+              {/* <li>Sun: Closed</li> */}
             </ul>
           </div>
         </div>
