@@ -26,7 +26,7 @@ export default function AboutSection() {
           <div className="space-y-6">
             <div className="relative rounded-lg overflow-hidden shadow-lg">
               <img
-                src="/k.png"
+                src="/k.jpg"
                 alt="Joinville Suites Building"
                 className="w-full h-80 object-cover"
               />
