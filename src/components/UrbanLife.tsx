@@ -9,7 +9,7 @@ export default function UrbanLife() {
             Comfort, Community, and Convenience at Joinville Suites
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-Nestled in two of Windsor’s most desirable neighbourhoods, Joinville Suites blends comfort with convenience for residents who value quality living. Whether you're enjoying scenic views along Riverside Drive or the vibrant energy of Wyandotte Street East, these well-cared-for buildings offer spacious layouts, quiet surroundings, and easy access to shops, parks, and transit. Known for their strong sense of community and attentive management, Joinville Suites is where residents choose to stay for the long term—because it simply feels like home.
+Nestled in two of Windsor’s most desirable neighbourhoods, Joinville Suites blends comfort with convenience for residents who value quality living. Whether you're enjoying scenic views along Riverside Drive or the vibrant energy of Wyandotte Street East, these well-cared-for buildings offer spacious layouts, quiet surroundings, and easy access to shops, parks, and transit. Known for their strong sense of community and attentive management, Joinville Suites is where residents choose to stay for the long term because it simply feels like home.
             </p>
           </div>
 
