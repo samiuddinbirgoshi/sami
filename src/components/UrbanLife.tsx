@@ -6,16 +6,10 @@ export default function UrbanLife() {
           {/* Left Content */}
           <div>
             <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 leading-tight">
-             Prime Windsor Multifamily Investment
+            Comfort, Community, and Convenience at Joinville Suites
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-Discover Joinville Suites, two prime multifamily properties located at 3905
-Riverside Drive East and 3900 Wyandotte Street East in vibrant Windsor, Ontario.
-Offering a total of 126 well-maintained units (72 at Riverside and 54 at Wyandotte),
-Joinville Suites provides a secure and long-term living experience. Benefit from stable
-and predictable cash flows in a growing market with high tenant demand, ensuring a
-steady stream of rental income and significant potential for value appreciation.
-
+Nestled in two of Windsor’s most desirable neighbourhoods, Joinville Suites blends comfort with convenience for residents who value quality living. Whether you're enjoying scenic views along Riverside Drive or the vibrant energy of Wyandotte Street East, these well-cared-for buildings offer spacious layouts, quiet surroundings, and easy access to shops, parks, and transit. Known for their strong sense of community and attentive management, Joinville Suites is where residents choose to stay for the long term—because it simply feels like home.
             </p>
           </div>
 

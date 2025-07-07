@@ -16,22 +16,17 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 leading-tight">
-              Prime Windsor Multifamily Investment
+            Welcome to Joinville Suites – A Place to Call Home
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Discover Joinville Suites, two prime multifamily properties located at 3905
-              Riverside Drive East and 3900 Wyandotte Street East in vibrant Windsor, Ontario.
-              Offering a total of 126 well-maintained units (72 at Riverside and 54 at Wyandotte),
-              Joinville Suites provides a secure and long-term living experience. Benefit from stable
-              and predictable cash flows in a growing market with high tenant demand, ensuring a
-              steady stream of rental income and significant potential for value appreciation.
+              Joinville Suites offers exceptional living across two sought-after locations in vibrant Windsor, Ontario—3905 Riverside Drive East and 3900 Wyandotte Street East. With a total of 126 thoughtfully maintained suites (72 at Riverside and 54 at Wyandotte), residents enjoy comfortable, secure, and welcoming homes in friendly communities. The buildings are known for their peaceful atmosphere, prime locations near the waterfront and amenities, and long-term residents who truly love where they live. Joinville Suites is more than just a place to live—it's a place to feel at home.
             </p>
           </div>
 
           <div className="space-y-6">
             <div className="relative rounded-lg overflow-hidden shadow-lg">
               <img
-                src="/a.jpg"
+                src="/k.png"
                 alt="Joinville Suites Building"
                 className="w-full h-80 object-cover"
               />
@@ -39,7 +34,7 @@ export default function AboutSection() {
 
             <div className="relative rounded-lg overflow-hidden shadow-lg">
               <img
-                src="/f.jpg"
+                src="/a.jpg"
                 alt="Interior Design"
                 className="w-full h-64 object-cover"
               />

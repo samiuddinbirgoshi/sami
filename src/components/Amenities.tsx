@@ -2,8 +2,8 @@ export default function Amenities() {
   const amenities = [
     {
       icon: "https://ext.same-assets.com/1166745218/2218836690.svg",
-      title: "Amenities & Facilities",
-      description: "Luxurious infinity pools with stunning views"
+       title: "Relaxation and comfort",
+      description: "Aiming to provide luxury and comfort for life"
     },
     {
       icon: "https://ext.same-assets.com/1166745218/879415374.svg",
@@ -23,17 +23,17 @@ export default function Amenities() {
     {
       icon: "https://ext.same-assets.com/1166745218/2622735659.svg",
       title: "On-site Parking",
-      description: "Exclusive outdoor spaces for residents"
+      description: "On-Site Indoor Parking and Storage Facilities"
     },
     {
       icon: "https://ext.same-assets.com/1166745218/3590652409.svg",
-      title: "Security 24/7",
-      description: "Round-the-clock security for peace of mind"
+      title: " Comfort for Generations",
+      description: "modern living—crafting spaces and experiences that nurture your family’s legacy"
     },
     {
       icon: "https://ext.same-assets.com/1166745218/1277326766.svg",
-      title: "Fitness Centre",
-      description: "State-of-the-art gym and wellness facilities"
+      title: "laundry conveniences",
+      description: "Discreet and exclusive laundry care."
     },
     {
       icon: "https://ext.same-assets.com/1166745218/3729959171.svg",
