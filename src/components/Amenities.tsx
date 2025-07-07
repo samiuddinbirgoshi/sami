@@ -22,7 +22,7 @@ export default function Amenities() {
     },
     {
       icon: "https://ext.same-assets.com/1166745218/2622735659.svg",
-      title: "On-site Parking",
+      title: "On-Site Parking",
       description: "On-Site Indoor Parking and Storage Facilities"
     },
     {
@@ -32,7 +32,7 @@ export default function Amenities() {
     },
     {
       icon: "https://ext.same-assets.com/1166745218/1277326766.svg",
-      title: "laundry conveniences",
+      title: "On-Site Laundry",
       description: "Discreet and exclusive laundry care."
     },
     {
