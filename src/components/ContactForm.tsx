@@ -3,11 +3,32 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
+// Country code data
+const countryCodes = [
+  { code: "+971", name: "UAE" },
+  { code: "+966", name: "Saudi Arabia" },
+  { code: "+1", name: "Canada" },
+  { code: "+44", name: "UK" },
+  { code: "+91", name: "India" },
+  { code: "+92", name: "Pakistan" },
+  { code: "+20", name: "Egypt" },
+  { code: "+33", name: "France" },
+  { code: "+49", name: "Germany" },
+  { code: "+7", name: "Russia" },
+  { code: "+81", name: "Japan" },
+  { code: "+86", name: "China" },
+  { code: "+61", name: "Australia" },
+  { code: "+27", name: "South Africa" },
+  { code: "+55", name: "Brazil" },
+  // Add more countries as needed
+];
+
 export default function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [selectedCountryCode, setSelectedCountryCode] = useState("+971");
 
   // EmailJS Configuration
   const EMAILJS_CONFIG = {
@@ -46,6 +67,10 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     try {
+      // Combine country code with phone number before sending
+      const formData = new FormData(formRef.current as HTMLFormElement);
+      formData.set('phone', `${selectedCountryCode} ${formData.get('phone')}`);
+      
       await emailjs.sendForm(
         EMAILJS_CONFIG.serviceId,
         EMAILJS_CONFIG.templateId,
@@ -130,12 +155,22 @@ export default function ContactForm() {
               </div>
               <div>
                 <div className={`border-b ${errors.phone ? "border-red-400" : "border-white/30"} flex`}>
-                  <span className="text-white/80 py-3 pr-3 text-base">+971</span>
+                  <select
+                    value={selectedCountryCode}
+                    onChange={(e) => setSelectedCountryCode(e.target.value)}
+                    className="bg-transparent text-white/80 py-3 pr-2 text-base focus:outline-none border-r border-white/30"
+                  >
+                    {countryCodes.map((country) => (
+                      <option key={country.code} value={country.code} className="text-black">
+                        {country.code} {country.name}
+                      </option>
+                    ))}
+                  </select>
                   <input
                     name="phone"
                     type="tel"
                     placeholder="Your Phone Number*"
-                    className="w-full bg-transparent text-white placeholder-white/50 py-3 text-base focus:outline-none"
+                    className="w-full bg-transparent text-white placeholder-white/50 py-3 pl-3 text-base focus:outline-none"
                   />
                 </div>
                 {errors.phone && <p className="text-red-400 text-sm mt-2">{errors.phone}</p>}
