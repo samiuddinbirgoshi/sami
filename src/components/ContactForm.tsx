@@ -8,7 +8,6 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [countryCode, setCountryCode] = useState("+971"); // Default to +971
 
   // EmailJS Configuration
   const EMAILJS_CONFIG = {
@@ -16,19 +15,6 @@ export default function ContactForm() {
     templateId: "template_l7o3dew",
     publicKey: "EbrdYh5PNga8iKJii"
   };
-
-  const countryCodes = [
-    { name: "UAE (+971)", code: "+971" },
-    { name: "Saudi (+966)", code: "+966" },
-    { name: "Qatar (+974)", code: "+974" },
-    { name: "Kuwait (+965)", code: "+965" },
-    { name: "Bahrain (+973)", code: "+973" },
-    { name: "Oman (+968)", code: "+968" },
-    { name: "USA (+1)", code: "+1" },
-    { name: "UK (+44)", code: "+44" },
-    { name: "India (+91)", code: "+91" },
-    { name: "Other", code: "+" }
-  ];
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -69,7 +55,6 @@ export default function ContactForm() {
       
       setSubmitSuccess(true);
       formRef.current?.reset();
-      setCountryCode("+971"); // Reset to default after submission
     } catch (error) {
       console.error("Failed to send message:", error);
       alert("Failed to send message. Please try again later.");
@@ -112,7 +97,7 @@ export default function ContactForm() {
                     name="firstName"
                     type="text"
                     placeholder="Your First Name*"
-                    className="w-full bg-transparent text-white placeholder-white/50 py-3 text-lg focus:outline-none autofill:bg-transparent autofill:text-white"
+                    className="w-full bg-transparent text-white placeholder-white/50 py-3 text-base focus:outline-none"
                   />
                 </div>
                 {errors.firstName && <p className="text-red-400 text-sm mt-2">{errors.firstName}</p>}
@@ -123,7 +108,7 @@ export default function ContactForm() {
                     name="lastName"
                     type="text"
                     placeholder="Your Last Name*"
-                    className="w-full bg-transparent text-white placeholder-white/50 py-3 text-lg focus:outline-none autofill:bg-transparent autofill:text-white"
+                    className="w-full bg-transparent text-white placeholder-white/50 py-3 text-base focus:outline-none"
                   />
                 </div>
                 {errors.lastName && <p className="text-red-400 text-sm mt-2">{errors.lastName}</p>}
@@ -138,29 +123,19 @@ export default function ContactForm() {
                     name="email"
                     type="email"
                     placeholder="Your Email Address*"
-                    className="w-full bg-transparent text-white placeholder-white/50 py-3 text-lg focus:outline-none autofill:bg-transparent autofill:text-white"
+                    className="w-full bg-transparent text-white placeholder-white/50 py-3 text-base focus:outline-none"
                   />
                 </div>
                 {errors.email && <p className="text-red-400 text-sm mt-2">{errors.email}</p>}
               </div>
               <div>
-                <div className={`border-b ${errors.phone ? "border-red-400" : "border-white/30"} flex items-center`}>
-                  <select 
-                    value={countryCode}
-                    onChange={(e) => setCountryCode(e.target.value)}
-                    className="bg-transparent text-white text-lg focus:outline-none w-32 pr-2"
-                  >
-                    {countryCodes.map((country) => (
-                      <option key={country.code} value={country.code} className="text-black">
-                        {country.name}
-                      </option>
-                    ))}
-                  </select>
+                <div className={`border-b ${errors.phone ? "border-red-400" : "border-white/30"} flex`}>
+                  <span className="text-white/80 py-3 pr-3 text-base">+971</span>
                   <input
                     name="phone"
                     type="tel"
                     placeholder="Your Phone Number*"
-                    className="flex-1 bg-transparent text-white placeholder-white/50 py-3 text-lg focus:outline-none pl-2 autofill:bg-transparent autofill:text-white"
+                    className="w-full bg-transparent text-white placeholder-white/50 py-3 text-base focus:outline-none"
                   />
                 </div>
                 {errors.phone && <p className="text-red-400 text-sm mt-2">{errors.phone}</p>}
@@ -172,7 +147,7 @@ export default function ContactForm() {
               <div className={`border-b ${errors.timeframe ? "border-red-400" : "border-white/30"}`}>
                 <select 
                   name="timeframe" 
-                  className="w-full bg-transparent text-white py-3 text-lg focus:outline-none appearance-none"
+                  className="w-full bg-transparent text-white py-3 text-base focus:outline-none appearance-none"
                 >
                   <option value="">Select Timeframe*</option>
                   <option className="text-black" value="immediate">Immediate</option>
@@ -190,9 +165,9 @@ export default function ContactForm() {
                 name="consent"
                 type="checkbox"
                 id="consent"
-                className="mt-1 h-5 w-5 bg-transparent border-white focus:ring-0"
+                className="mt-1 h-4 w-4 bg-transparent border-white focus:ring-0"
               />
-              <label htmlFor="consent" className="text-white/80 text-lg ml-3">
+              <label htmlFor="consent" className="text-white/80 text-sm ml-3">
                 I agree to the privacy policy and authorize the processing of my personal data*
               </label>
               {errors.consent && <p className="text-red-400 text-sm ml-3">{errors.consent}</p>}
@@ -202,7 +177,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full bg-white text-black py-4 mt-8 text-lg hover:bg-gray-100 transition-colors ${
+              className={`w-full bg-white text-black py-4 mt-8 text-base hover:bg-gray-100 transition-colors ${
                 isSubmitting ? "opacity-70 cursor-not-allowed" : ""
               }`}
             >
