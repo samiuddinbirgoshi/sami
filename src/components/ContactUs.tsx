@@ -3,12 +3,11 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-export default function ContactForm() {
+export default function ContactUs() {
   const formRef = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [countryCode, setCountryCode] = useState("+971"); // Default to +971
 
   // EmailJS Configuration
   const EMAILJS_CONFIG = {
@@ -16,19 +15,6 @@ export default function ContactForm() {
     templateId: "template_l7o3dew",
     publicKey: "EbrdYh5PNga8iKJii"
   };
-
-  const countryCodes = [
-    { name: "UAE (+971)", code: "+971" },
-    { name: "Saudi (+966)", code: "+966" },
-    { name: "Qatar (+974)", code: "+974" },
-    { name: "Kuwait (+965)", code: "+965" },
-    { name: "Bahrain (+973)", code: "+973" },
-    { name: "Oman (+968)", code: "+968" },
-    { name: "USA (+1)", code: "+1" },
-    { name: "UK (+44)", code: "+44" },
-    { name: "India (+91)", code: "+91" },
-    { name: "Other", code: "+" }
-  ];
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -45,8 +31,8 @@ export default function ContactForm() {
       newErrors.email = "Email is invalid";
     }
     if (!form.phone.value) newErrors.phone = "Phone number is required";
-    if (!form.timeframe.value) newErrors.timeframe = "Timeframe is required";
-    if (!form.consent.checked) newErrors.consent = "Consent is required";
+    if (!form.unitNumber.value) newErrors.unitNumber = "Unit number is required";
+    if (!form.request.value) newErrors.request = "Maintenance request is required";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -69,7 +55,6 @@ export default function ContactForm() {
       
       setSubmitSuccess(true);
       formRef.current?.reset();
-      setCountryCode("+971"); // Reset to default after submission
     } catch (error) {
       console.error("Failed to send message:", error);
       alert("Failed to send message. Please try again later.");
@@ -82,13 +67,13 @@ export default function ContactForm() {
     return (
       <section id="contact" className="bg-black w-full py-24 px-4 sm:px-8">
         <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-3xl font-light mb-8">THANK YOU FOR CONTACTING US</h2>
-          <p className="mb-10 text-lg">We appreciate your interest and will respond to your inquiry within 24 hours.</p>
+          <h2 className="text-3xl font-light mb-8">THANK YOU FOR YOUR REQUEST</h2>
+          <p className="mb-10 text-lg">We have received your maintenance request and will respond shortly.</p>
           <button
             onClick={() => setSubmitSuccess(false)}
             className="bg-white text-black py-4 px-10 text-base hover:bg-gray-100 transition-colors"
           >
-            SEND ANOTHER MESSAGE
+            SEND ANOTHER REQUEST
           </button>
         </div>
       </section>
@@ -100,7 +85,7 @@ export default function ContactForm() {
       <div className="bg-black w-full py-16 px-6 sm:px-10">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-white text-3xl font-light mb-10 text-center">
-            CONTACT US FOR MORE INFORMATION
+            MAINTENANCE REQUEST FORM
           </h2>
 
           <form ref={formRef} onSubmit={handleSubmit} className="space-y-6" noValidate>
@@ -112,7 +97,7 @@ export default function ContactForm() {
                     name="firstName"
                     type="text"
                     placeholder="Your First Name*"
-                    className="w-full bg-transparent text-white placeholder-white/50 py-3 text-lg focus:outline-none autofill:bg-transparent autofill:text-white"
+                    className="w-full bg-transparent text-white placeholder-white/50 py-3 text-base focus:outline-none"
                   />
                 </div>
                 {errors.firstName && <p className="text-red-400 text-sm mt-2">{errors.firstName}</p>}
@@ -123,7 +108,7 @@ export default function ContactForm() {
                     name="lastName"
                     type="text"
                     placeholder="Your Last Name*"
-                    className="w-full bg-transparent text-white placeholder-white/50 py-3 text-lg focus:outline-none autofill:bg-transparent autofill:text-white"
+                    className="w-full bg-transparent text-white placeholder-white/50 py-3 text-base focus:outline-none"
                   />
                 </div>
                 {errors.lastName && <p className="text-red-400 text-sm mt-2">{errors.lastName}</p>}
@@ -138,71 +123,54 @@ export default function ContactForm() {
                     name="email"
                     type="email"
                     placeholder="Your Email Address*"
-                    className="w-full bg-transparent text-white placeholder-white/50 py-3 text-lg focus:outline-none autofill:bg-transparent autofill:text-white"
+                    className="w-full bg-transparent text-white placeholder-white/50 py-3 text-base focus:outline-none"
                   />
                 </div>
                 {errors.email && <p className="text-red-400 text-sm mt-2">{errors.email}</p>}
               </div>
               <div>
-                <div className={`border-b ${errors.phone ? "border-red-400" : "border-white/30"} flex items-center`}>
-                  <select 
-                    value={countryCode}
-                    onChange={(e) => setCountryCode(e.target.value)}
-                    className="bg-transparent text-white text-lg focus:outline-none w-32 pr-2"
-                  >
-                    {countryCodes.map((country) => (
-                      <option key={country.code} value={country.code} className="text-black">
-                        {country.name}
-                      </option>
-                    ))}
-                  </select>
+                <div className={`border-b ${errors.phone ? "border-red-400" : "border-white/30"}`}>
                   <input
                     name="phone"
                     type="tel"
                     placeholder="Your Phone Number*"
-                    className="flex-1 bg-transparent text-white placeholder-white/50 py-3 text-lg focus:outline-none pl-2 autofill:bg-transparent autofill:text-white"
+                    className="w-full bg-transparent text-white placeholder-white/50 py-3 text-base focus:outline-none"
                   />
                 </div>
                 {errors.phone && <p className="text-red-400 text-sm mt-2">{errors.phone}</p>}
               </div>
             </div>
 
-            {/* Timeframe Dropdown */}
+            {/* Unit Number */}
             <div>
-              <div className={`border-b ${errors.timeframe ? "border-red-400" : "border-white/30"}`}>
-                <select 
-                  name="timeframe" 
-                  className="w-full bg-transparent text-white py-3 text-lg focus:outline-none appearance-none"
-                >
-                  <option value="">Select Timeframe*</option>
-                  <option className="text-black" value="immediate">Immediate</option>
-                  <option className="text-black" value="30-days">Within 30 Days</option>
-                  <option className="text-black" value="60-days">Within 60 Days</option>
-                  <option className="text-black" value="90+ days">90+ Days</option>
-                </select>
+              <div className={`border-b ${errors.unitNumber ? "border-red-400" : "border-white/30"}`}>
+                <input
+                  name="unitNumber"
+                  type="text"
+                  placeholder="Unit Number*"
+                  className="w-full bg-transparent text-white placeholder-white/50 py-3 text-base focus:outline-none"
+                />
               </div>
-              {errors.timeframe && <p className="text-red-400 text-sm mt-2">{errors.timeframe}</p>}
+              {errors.unitNumber && <p className="text-red-400 text-sm mt-2">{errors.unitNumber}</p>}
             </div>
 
-            {/* Consent */}
-            <div className="flex items-start pt-4">
-              <input
-                name="consent"
-                type="checkbox"
-                id="consent"
-                className="mt-1 h-5 w-5 bg-transparent border-white focus:ring-0"
-              />
-              <label htmlFor="consent" className="text-white/80 text-lg ml-3">
-                I agree to the privacy policy and authorize the processing of my personal data*
-              </label>
-              {errors.consent && <p className="text-red-400 text-sm ml-3">{errors.consent}</p>}
+            {/* Maintenance Request */}
+            <div>
+              <div className={`border-b ${errors.request ? "border-red-400" : "border-white/30"}`}>
+                <textarea
+                  name="request"
+                  placeholder="Describe your maintenance request*"
+                  className="w-full bg-transparent text-white placeholder-white/50 py-3 text-base focus:outline-none min-h-[120px]"
+                />
+              </div>
+              {errors.request && <p className="text-red-400 text-sm mt-2">{errors.request}</p>}
             </div>
 
             {/* Submit Button */}
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full bg-white text-black py-4 mt-8 text-lg hover:bg-gray-100 transition-colors ${
+              className={`w-full bg-white text-black py-4 mt-8 text-base hover:bg-gray-100 transition-colors ${
                 isSubmitting ? "opacity-70 cursor-not-allowed" : ""
               }`}
             >
@@ -215,7 +183,7 @@ export default function ContactForm() {
                   PROCESSING YOUR REQUEST...
                 </span>
               ) : (
-                "SUBMIT YOUR INQUIRY"
+                "SUBMIT MAINTENANCE REQUEST"
               )}
             </button>
           </form>

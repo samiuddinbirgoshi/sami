@@ -9,10 +9,10 @@ export default function ImageGallery() {
   const [isHovered, setIsHovered] = useState(false);
 
   const images = [
-    { src: "/a.jpg", alt: "Building exterior" },
-    { src: "/b.jpg", alt: "Lobby area" },
-    { src: "/c.jpg", alt: "Apartment interior" },
-    { src: "/d.jpg", alt: "Amenities" },
+    { src: "/sa.jpg", alt: "Building exterior" },
+    { src: "/ud.jpg", alt: "Lobby area" },
+    { src: "/mi.jpg", alt: "Apartment interior" },
+    { src: "/in.jpg", alt: "Amenities" },
     { src: "/e.jpg", alt: "Neighborhood" },
     { src: "/f.jpg", alt: "River view" },
     { src: "/g.jpg", alt: "Kitchen detail" },
@@ -42,7 +42,7 @@ export default function ImageGallery() {
   if (!hasMounted) return null;
 
   return (
-    <section id="gallery" className="py-20 bg-gray-50">
+    <section id="gallery" className="py-16 bg-gray-50">
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4">
@@ -62,8 +62,8 @@ export default function ImageGallery() {
           <Image
             src={images[activeImage].src}
             alt={images[activeImage].alt}
-            width={1200}
-            height={800}
+            width={1100}
+            height={700}
             className="w-full h-auto object-cover aspect-video"
             // Removed dynamic priority for consistency
             loading="eager"

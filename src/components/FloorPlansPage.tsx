@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
 export default function FloorPlansPage() {
   const [activeBuilding, setActiveBuilding] = useState("riverside");
   const [activeUnit, setActiveUnit] = useState("1-bedroom");
+  const router = useRouter();
 
   const buildings = {
     riverside: {
@@ -19,7 +21,7 @@ export default function FloorPlansPage() {
           beds: 1,
           baths: 1,
           features: ["Newly renovated kitchen", "Upgraded bathroom", "Spacious layout", "Some units with balconies"],
-          image: "/a.jpg"
+          image: "/1a.jpg"
         },
         {
           id: "2-bedroom",
@@ -28,7 +30,7 @@ export default function FloorPlansPage() {
           beds: 2,
           baths: 1,
           features: ["Newly renovated kitchen", "Upgraded bathroom", "Spacious layout", "Some units with balconies"],
-          image: "/b.jpg"
+          image: "/2a.jpg"
         },
         {
           id: "3-bedroom",
@@ -37,7 +39,7 @@ export default function FloorPlansPage() {
           beds: 3,
           baths: "1 or 2",
           features: ["Newly renovated kitchen", "Upgraded bathroom(s)", "Spacious layout", "Some units with balconies"],
-          image: "/c.jpg"
+          image: "/3a.jpg"
         }
       ]
     },
@@ -52,7 +54,7 @@ export default function FloorPlansPage() {
           beds: "Studio",
           baths: 1,
           features: ["Newly renovated kitchen", "Upgraded bathroom", "Efficient layout"],
-          image: "/d.jpg"
+          image: "/1a.jpg"
         },
         {
           id: "1-bedroom",
@@ -61,7 +63,7 @@ export default function FloorPlansPage() {
           beds: 1,
           baths: 1,
           features: ["Newly renovated kitchen", "Upgraded bathroom", "Spacious layout"],
-          image: "/e.jpg"
+          image: "/2a.jpg"
         },
         {
           id: "2-bedroom",
@@ -70,7 +72,7 @@ export default function FloorPlansPage() {
           beds: 2,
           baths: 1,
           features: ["Newly renovated kitchen", "Upgraded bathroom", "Spacious layout"],
-          image: "/f.jpg"
+          image: "/3a.jpg"
         }
       ]
     }
@@ -165,28 +167,10 @@ export default function FloorPlansPage() {
                 className="w-full h-auto border border-gray-200"
               />
               
-              {/* Simplified Details Section */}
-              {/* <div className="mt-6 grid grid-cols-2 gap-2">
-                <div>
-                  <p className="text-sm text-gray-500">Bedrooms</p>
-                  <p className="text-lg font-medium mt-1">{currentUnit.beds}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500">Bathrooms</p>
-                  <p className="text-lg font-medium mt-1">{currentUnit.baths}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500">Size</p>
-                  <p className="text-lg font-medium mt-1">{currentUnit.size}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500">Availability</p>
-                  <p className="text-lg font-medium mt-1">Contact us</p>
-                </div>
-              </div> */}
-
-              {/* Rounded Inquiry Button */}
-              <Button className="w-full mt-6 bg-black hover:bg-gray-800 text-white rounded-full py-3">
+              <Button 
+                className="w-full mt-6 bg-black hover:bg-gray-800 text-white rounded-full py-3"
+                onClick={() => router.push('/contact')}
+              >
                 Inquire About This Unit
               </Button>
             </div>

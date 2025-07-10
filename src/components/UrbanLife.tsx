@@ -18,7 +18,7 @@ Nestled in two of Windsor’s most desirable neighbourhoods, Joinville Suites bl
             {/* Main Building Image */}
             <div className="relative rounded-lg overflow-hidden shadow-lg">
               <img
-                src="https://ext.same-assets.com/1166745218/1189394691.jpeg"
+                src="/sa.jpg"
                 alt="City Walk Northline Building"
                 className="w-full h-80 object-cover"
               />
@@ -27,7 +27,7 @@ Nestled in two of Windsor’s most desirable neighbourhoods, Joinville Suites bl
             {/* Interior Image */}
             <div className="relative rounded-lg overflow-hidden shadow-lg">
               <img
-                src="https://ext.same-assets.com/1166745218/3945662813.jpeg"
+                src="ud.jpg"
                 alt="Interior Design"
                 className="w-full h-64 object-cover"
               />

@@ -7,6 +7,7 @@ import { X, Menu } from "lucide-react";
 
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
+import ContactUs from "@/components/ContactUs";
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -28,7 +29,7 @@ export default function Hero() {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Amenities", href: "/amenties" },
-    { name: "“Floor Plans & Pricing", href: "/floorplans" },
+    { name: "Floor Plans & Pricing", href: "/floorplans" },
     { name: "Gallery", href: "/gallery" },
     { name: "Contact", href: "/contact" },
        { name: "Maintainace Requests", href: "/maintanace"},
@@ -215,7 +216,7 @@ useEffect(() => {
         ))}
       </div>
     </section>
-     <ContactForm/>
+     <ContactUs/>
          {/* <CityWalkVision/>  */}
        {/* <FloorPlans/>  */}
        {/* <Interior/>  */}
