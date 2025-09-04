@@ -11,9 +11,9 @@ export default function ContactForm() {
 
   // EmailJS Configuration
   const EMAILJS_CONFIG = {
-      serviceId: "service_j6as4sk",
-    templateId: "template_p4es5oo",
-    publicKey: "BfSKbu2UpvY_QTOFp"
+      serviceId: "service_j6ggas4sk",
+    templateId: "template_pgg4es5oo",
+    publicKey: "BfSKbu2UpvYgg_QTOFp"
   };
 
   const validateForm = () => {
